@@ -1,0 +1,42 @@
+
+.lmj-plant-item {
+	border: solid 2px #31b572;
+	border-radius: 10px;
+	// height: 250px;
+	width: 150px;
+	margin: 10px;
+    padding: 3px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	text-transform: capitalize;
+	position: relative;
+    .lmj-plant-item-cover {
+        img{
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+	.lmj-plant-item-info {
+		width: 100%;
+	}
+    .careType{
+        cursor: pointer;
+    }
+	.addCart{
+		margin: auto;
+		display: block;
+	}
+}
+
+.lmj-sales {
+    position: absolute;
+	right: -1px;
+	top: 10px;
+	font-weight: 500;
+	color: white;
+	padding: 5px 10px;
+	background-color: #31b572;
+}

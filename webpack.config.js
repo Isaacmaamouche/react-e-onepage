@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const cssMode = module.exports.mode == "developement" ? "style-loader" : MiniCssExtractPlugin.loader;
 
 module.exports = {
     mode:"developmentt",
@@ -8,16 +9,17 @@ module.exports = {
 
     plugins: [new MiniCssExtractPlugin({
         filename: "./css/css_bundle.css"
-        }
-    )],
+    })],
 
     module: {
         rules: [
         {
-            test: /\.scss$/i,
+            test: /\.(scss|css)$/i,
             use: [
             // could replace the next line with "style-loader" here for inline css
-            MiniCssExtractPlugin.loader,
+            // MiniCssExtractPlugin.loader,
+            "style-loader",
+            // cssMode,
             "css-loader",
             "postcss-loader",
             // according to the docs, sass-loader should be at the bottom, which
@@ -42,11 +44,16 @@ module.exports = {
         filename: "bundle.js"
     },
     devServer: {
-        contentBase: path.join(__dirname, "public/"),
         port: 3000,
-        publicPath: "http://localhost:3000/dist/",
-        hotOnly: true
+        static: {
+            directory: path.join(__dirname, 'public'),
+          },
+        // static: {
+        // directory: path.join(__dirname, 'src/img'),
+        // publicPath: '/img',
+        // },
+        hot: true
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [new webpack.HotModuleReplacementPlugin()],
 
 };

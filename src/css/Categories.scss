@@ -1,0 +1,11 @@
+.categories_selector{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px 5px;
+    border: solid 2px #31b572;
+    border-radius: 10px;
+    &:focus-visible{
+        outline: solid 1px #31b572;
+    }
+}

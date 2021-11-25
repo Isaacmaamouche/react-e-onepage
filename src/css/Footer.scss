@@ -1,0 +1,37 @@
+.lmj-footer {
+	color: black;
+	padding: 32px;
+	border-top: solid 3px black;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 500;
+	position: relative;
+	input{
+		padding: 2px 5px;
+    	border: solid 2px #31b572;
+	    border-radius: 10px;
+	}
+}
+
+.lmj-footer-elem {
+	margin-bottom: 10px;
+	transition: all 0.3s ease;
+}
+.mailForm.submitted {
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+.thxForm{
+	opacity: 0;
+	transform: translateY(0px);
+	position: absolute;
+	top: 50%;
+	pointer-events: none;
+}
+.thxForm.submitted{
+	opacity: 1;
+    transform: translateY(-50%);
+}

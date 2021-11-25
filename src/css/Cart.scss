@@ -1,0 +1,58 @@
+.lmj-cart{
+    padding: 24px;
+    color: white;
+    background:#31b572;
+    position: fixed;
+    right: 0;
+	width: 200px;
+    transform: translateX(0%);
+    opacity: 1;
+    transition: all 0.3s ease;
+    z-index: 1;
+
+    ul{
+        list-style: none;
+    }
+    
+    &-closed{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    .closeCart{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .removeItem, .addItem, .deleteItem{
+        user-select: none;
+        position: absolute;
+        left: 50px;
+        cursor: pointer;
+    }
+    .removeItem{
+        left: 35px;
+    }
+    .addItem{
+        left: 20px;
+    }
+}
+
+.openCart{ 
+    position: absolute;
+    right: 0;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    img{
+        filter: invert(1);
+    }
+}
+
+
+
+
