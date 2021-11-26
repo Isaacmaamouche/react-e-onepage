@@ -1,6 +1,6 @@
 import React from "react";
 import '../../css/Cart.scss';
-const CartLogo = '../../img/icons8-shopping-cart-24.png';
+const CartLogo = './img/icons8-shopping-cart-24.png';
 import { useState } from 'react';
 import { useEffect } from 'react';
 

@@ -1,10 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const cssMode = module.exports.mode == "developement" ? "style-loader" : MiniCssExtractPlugin.loader;
 
 module.exports = {
-    mode:"developmentt",
+    mode:"development",
     entry: './src/js/index.js',  
 
     plugins: [new MiniCssExtractPlugin({
@@ -17,9 +16,8 @@ module.exports = {
             test: /\.(scss|css)$/i,
             use: [
             // could replace the next line with "style-loader" here for inline css
-            // MiniCssExtractPlugin.loader,
-            "style-loader",
-            // cssMode,
+            MiniCssExtractPlugin.loader,
+            // "style-loader",
             "css-loader",
             "postcss-loader",
             // according to the docs, sass-loader should be at the bottom, which
@@ -47,13 +45,12 @@ module.exports = {
         port: 3000,
         static: {
             directory: path.join(__dirname, 'public'),
-          },
-        // static: {
-        // directory: path.join(__dirname, 'src/img'),
-        // publicPath: '/img',
-        // },
-        hot: true
+        },
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "css_bundle.css"
+        }), 
+        new webpack.HotModuleReplacementPlugin()],
 
 };
