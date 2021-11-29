@@ -28,6 +28,9 @@ useEffect(() => {
         localStorage.setItem('storedCart', JSONcart);
 }, [cart]);
 
+function revealCatMenu(){
+  document.querySelector(".cat_multiselect ul").classList.toggle('revealCatMenu');
+}
 
   return (
     <>    

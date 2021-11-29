@@ -31,7 +31,7 @@
 
     ul{
         width: 200px;
-        transform: translate(-120%, -31px);
+        transform: translate(-120%, -22px);
         transition: transform 0.3s ease;
         list-style:none;
         padding: 0;
@@ -42,9 +42,20 @@
         li{
             height: 35px;
         }
+        @media screen and (max-width:768px) {
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            .cat_name{
+                padding: 14px 30px;
+            }
+            li{
+                height: 60px;
+            }
+        }
     }
     .revealCatMenu{
-        transform: translate(0%, -31px);
+        transform: translate(0%, -22px);
     }
     input {
         height: 0;
