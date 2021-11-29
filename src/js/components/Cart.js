@@ -60,9 +60,11 @@ function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
                 return (
 
                     <li key={`${index}_${cartItem.name}`}>
-                        <span className="deleteItem" onClick={() => deleteItem(cartItem)}>x</span>
-                        <span className="removeItem" onClick={() => removeItem(cartItem)}>-</span>
-                        <span className="addItem" onClick={() => addItem(cartItem)}>+</span>
+                        <div className="actionOnItem">
+                            <span className="deleteItem" onClick={() => deleteItem(cartItem)}>x</span>
+                            <span className="removeItem" onClick={() => removeItem(cartItem)}>-</span>
+                            <span className="addItem" onClick={() => addItem(cartItem)}>+</span>
+                        </div>
 
                         {cartItem.qty} {cartItem.name} : {cartItem.price * cartItem.qty}€
                     </li>
@@ -89,9 +91,11 @@ function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
                 return (
                 
                     <li key={`${index}_${cartItem.name}`}>
-                        <span className="deleteItem" onClick={() => deleteItem(cartItem)}>x</span>
-                        <span className="removeItem" onClick={() => removeItem(cartItem)}>-</span>
-                        <span className="addItem" onClick={() => addItem(cartItem)}>+</span>
+                        <div className="actionOnItem">
+                            <span className="deleteItem" onClick={() => deleteItem(cartItem)}>x</span>
+                            <span className="removeItem" onClick={() => removeItem(cartItem)}>-</span>
+                            <span className="addItem" onClick={() => addItem(cartItem)}>+</span>
+                        </div>
 
                         {cartItem.qty} {cartItem.name} : {cartItem.price * cartItem.qty}€
                     </li>

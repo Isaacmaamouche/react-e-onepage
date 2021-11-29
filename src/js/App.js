@@ -30,16 +30,17 @@ useEffect(() => {
 
 
   return (
-    <div>    
+    <>    
       <Banner/>
       <div className="main">
         <MainContent>
+          <button className="openCatMenu" onClick={(e)=>revealCatMenu(e)}>Menu</button>
           <ShoppingList cart={cart} updateCart={updateCart} cartHasItem={cartHasItem} setCartHasItem={setCartHasItem}/>
         </MainContent>
-        <Cart cart={cart} updateCart={updateCart} cartHasItem={cartHasItem} setCartHasItem={setCartHasItem} />
+          <Cart cart={cart} updateCart={updateCart} cartHasItem={cartHasItem} setCartHasItem={setCartHasItem} />
       </div>
     <Footer />
-    </div>
+    </>
   );
 }
 

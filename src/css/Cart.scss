@@ -1,10 +1,11 @@
+@import './variables';
 .lmj-cart{
     padding: 24px;
     color: white;
-    background:#31b572;
+    background:$lmjgreen;
     position: fixed;
     right: 0;
-	width: 200px;
+	width: 250px;
     transform: translateX(0%);
     opacity: 1;
     transition: all 0.3s ease;
@@ -12,6 +13,10 @@
 
     ul{
         list-style: none;
+        padding: 0px;
+        li{ 
+            margin-bottom: 10px;
+        }
     }
     
     &-closed{
@@ -24,17 +29,30 @@
         right: 0;
         top: 0;
     }
+}
+
+.actionOnItem{
+    color: $lmjgreen;
+    display: inline;
+    margin-right: 10px;
     .removeItem, .addItem, .deleteItem{
+        background-color: white;
         user-select: none;
-        position: absolute;
-        left: 50px;
         cursor: pointer;
+        padding: 4px 8px;    
+        align-items: center;    
+    }
+    .deleteItem{
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
     }
     .removeItem{
-        left: 35px;
+        border-left:1px solid $lmjgreen;
+        border-right:1px solid $lmjgreen;
     }
     .addItem{
-        left: 20px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }
 

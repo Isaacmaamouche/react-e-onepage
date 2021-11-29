@@ -23,12 +23,13 @@ function PlantItem({name, id, category, price, cover, water, light, isBestSale, 
         <li key={`${id}_${name}`} data-key={`${id}_${name}`} className={`lmj-plant-item ${category}`}>
             <div className="lmj-plant-item-cover">
                 <img src={cover} alt={`${name} cover produit`}/>
+                <span className="lmj-plant-item-price">{price} €</span>
+                {isSpecialOffer && <div className="lmj-sales">En solde !</div>}
             </div>
             <div className="lmj-plant-item-info">
                 <span>{name}{isBestSale && ' 🏆'}</span>
                 <br/>
                 <span>{category}</span>
-                {isSpecialOffer && <div className="lmj-sales">En solde !</div>}
                 <CareScale careType='light' scaleValue={light} />
                 <CareScale careType='water' scaleValue={water} />
                 <button className="addCart" onClick={() => addToCart(cart,name,price)}>

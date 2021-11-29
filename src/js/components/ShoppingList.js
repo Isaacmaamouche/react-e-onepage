@@ -8,32 +8,27 @@ import { useState } from 'react';
 
 function ShoppingList({cart, updateCart, cartHasItem, setCartHasItem}) {
 
-    let catSelected;
-    if(document.querySelector('.categories_selector>option:checked') == null){
-        catSelected = "all_categories";
-    }else{
-        catSelected = document.querySelector('.categories_selector>option:checked').getAttribute('value');
-    } ;
-    const [categories, setCategories] = useState(catSelected);
-
-    function SetCategoryFilter(plant){
-        if(catSelected !== "all_categories"){
-            return plant.category === catSelected
+    const [categories, setCategories] = useState([]);
+    console.log(categories);
+    function SetMultiCategoryFilter(plant){
+        if(categories.length > 0){
+            return categories.includes(plant.category);
         }else{
-            return true
+            return true;
         }
     }
 
     return (
         <div className="lmj-plants">
-            <Categories plantList={plantList} categories={categories} setCategories={setCategories} />
+            <Categories plantList={plantList} categories={categories} setCategories={setCategories}/>
                 
             <ul className='lmj-plant-list'>
                 {plantList.filter(
-                    (plant) => SetCategoryFilter(plant)
+                    (plant) => SetMultiCategoryFilter(plant)
                     
                 ).map(({name, id, category, price, cover, water, light, isBestSale, isSpecialOffer}) => (
                     <PlantItem 
+                        key={name}
                         name={name}
                         id={id}
                         category={category}

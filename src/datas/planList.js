@@ -1,4 +1,4 @@
-const monstera = './img/monstera.jpg'
+const monstera = '../img/monstera.jpg'
 const plantList = [
 	{
 		name: 'monstera',

@@ -1,6 +1,7 @@
+@import "./variables";
 
 .lmj-plant-item {
-	border: solid 2px #31b572;
+	border: solid 2px $lmjgreen;
 	border-radius: 10px;
 	// height: 250px;
 	width: 150px;
@@ -12,18 +13,32 @@
 	flex-direction: column;
 	text-transform: capitalize;
 	position: relative;
-	transition: 300ms transform ease;
-	cursor: pointer;
-
-	&:hover{
-		transform: scale(1.02);
-	}
-	.lmj-plant-item-cover {
+    .lmj-plant-item-cover {
+		position: relative;
         img{
             width: 150px;
             height: auto;
             border-radius: 5px;
         }
+		.lmj-plant-item-price{
+			position: absolute;
+			bottom: 3px;
+			left: 0px;
+			padding: 3px 6px;
+			color: white;
+			border-radius: 0px 0px 0px 4px;
+			background-color: $lmjgreen;
+		}
+		.lmj-sales {
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			font-weight: 500;
+			color: white;
+			padding: 3px 6px;
+			background-color: $lmjgreen;
+			border-radius: 0px 4px 0px 0px;
+		}
     }
 	.lmj-plant-item-info {
 		width: 100%;
@@ -37,12 +52,3 @@
 	}
 }
 
-.lmj-sales {
-    position: absolute;
-	right: -1px;
-	top: 10px;
-	font-weight: 500;
-	color: white;
-	padding: 5px 10px;
-	background-color: #31b572;
-}
