@@ -2,11 +2,12 @@
 
 .lmj-banner {
 	color: $lmjgreen;
-	text-align: right;
+	text-align: center;
 	padding: 32px;
-	border-bottom: solid 3px $lmjgreen;
+	margin-bottom: 4px;
+	border-bottom: solid 1px $lmjgreen;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	flex-direction: row;
 	align-items: center;
     .lmj-title {

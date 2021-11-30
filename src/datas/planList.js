@@ -1,4 +1,4 @@
-const monstera = '../img/monstera.jpg'
+const monstera = './img/monstera.jpg'
 const plantList = [
 	{
 		name: 'monstera',
@@ -8,7 +8,8 @@ const plantList = [
 		cover: monstera,
         water:1,
         light:2,
-        isBestSale: true
+        isBestSale: true,
+		isSpecialOffer: true
 	},
 	{
 		name: 'ficus lyrata',

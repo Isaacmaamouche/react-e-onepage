@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
 
     const [isOpen, setIsOpen] = useState(cart.length>0);
+    console.log(isOpen);
     let cartTotal = cart.reduce(
         (acc, item) => acc + item.qty * item.price, 0);
     
@@ -14,6 +15,7 @@ function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
         document.title = `LMJ: ${cartTotal}€ d'achats`;
     }, [cartTotal])
 
+   
     function deleteItem(item){
         let newCart = cart.filter(
             (cartItem) => cartItem.name !== item.name
@@ -72,12 +74,13 @@ function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
                 );
             })}
             </ul>
-                <h3>Total: {cartTotal}€</h3></>)
+                <h3>Total: {cartTotal}€</h3>
+                <button onClick={() => { updateCart([]); setCartHasItem(false); } }>Vider le panier</button></>)
 
                 : <><h3>Votre panier est vide.</h3></>}
 
-            <button className="closeCart" onClick={() => setIsOpen(false)}>Fermer le Panier</button>
-            <button onClick={() => { updateCart([]); setCartHasItem(false); } }>vider le Panier</button>
+            <button className="closeCart" onClick={() => setIsOpen(false)}>╳</button>
+            
         </div>
         <button className="openCart" onClick={() => setIsOpen(true)}>{(cart.length>0) && cart.length}<img src={CartLogo} alt="Shopping Cart icon by Icons8"/></button>
         </>
@@ -102,12 +105,13 @@ function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
                 
                 )})}
                 </ul>
-                <h3>Total : {cartTotal}€</h3></>)
+                <h3>Total : {cartTotal}€</h3>
+                <button onClick={() => {updateCart([]);setCartHasItem(false);}}>Vider le panier</button></>)
 
             : <><h3>Votre panier est vide.</h3></>}
 
-            <button className="closeCart" onClick={() => setIsOpen(false)}>Fermer le Panier</button>
-            <button onClick={() => {updateCart([]);setCartHasItem(false);}}>vider le Panier</button>
+            <button className="closeCart" onClick={() => setIsOpen(false)}>╳</button>
+            
         </div>
         <button className="openCart" onClick={() => setIsOpen(true)}>{(cart.length>0) && cart.length}<img src={CartLogo} alt="Shopping Cart icon by Icons8"/></button>
         </>

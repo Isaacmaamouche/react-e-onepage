@@ -69,3 +69,10 @@ button:hover{
   transform: translateY(-1px);
   background-color: lighten($lmjgreen, 5%);
 }
+
+@media (hover: none){
+  button:hover{
+    transform: translateY(0px);
+    background-color: $lmjgreen;
+  }
+}

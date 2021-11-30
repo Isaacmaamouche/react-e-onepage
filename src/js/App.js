@@ -29,7 +29,7 @@ useEffect(() => {
 }, [cart]);
 
 function revealCatMenu(){
-  document.querySelector(".cat_multiselect ul").classList.toggle('revealCatMenu');
+  document.querySelector(".cat_multiselect").classList.toggle('revealCatMenu');
 }
 
   return (

@@ -29,6 +29,7 @@ function onAllCatSelect(e){
     return (
         <>
         <div className="cat_multiselect">
+        <span className="cat_closeMenu" onClick={()=>document.querySelector(".revealCatMenu").classList.remove('revealCatMenu')}>╳</span>
             <ul>
                 <li key="all_categories">
                     <label>
