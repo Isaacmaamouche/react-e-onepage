@@ -16,6 +16,7 @@ function Footer() {
 	return (
 		<footer className='lmj-footer'>
 			<div className='lmj-footer-elem'>
+            La Maison Jungle - An Open Classroom Project<br/>
 				Pour les passionné·e·s de plantes 🌿🌱🌵
 			</div>
 			<div className={`lmj-footer-elem mailForm ${formState}`}><p>Laissez-nous votre mail :</p>

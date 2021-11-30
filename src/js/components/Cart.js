@@ -1,13 +1,12 @@
 import React from "react";
 import '../../css/Cart.scss';
-const CartLogo = './img/icons8-shopping-cart-24.png';
+const CartLogo = './src/img/icons8-shopping-cart-24.png';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
 function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
 
     const [isOpen, setIsOpen] = useState(cart.length>0);
-    console.log(isOpen);
     let cartTotal = cart.reduce(
         (acc, item) => acc + item.qty * item.price, 0);
     
@@ -27,14 +26,11 @@ function Cart({cart, updateCart, cartHasItem, setCartHasItem}){
 
     function removeItem(item){
         let plantInCart = cart.find(plant => plant.name === item.name)
-        console.log(plantInCart.qty);
         let newCart = cart.filter(
             (plant) => plant.name !== item.name
         )
         if(plantInCart.qty>1){
-            console.log('qty sup à 1');
             updateCart([...newCart, {"name":item.name, "price":item.price, qty:plantInCart.qty - 1}]);
-            console.log(newCart.length);
         }else{
             deleteItem(item);
         }

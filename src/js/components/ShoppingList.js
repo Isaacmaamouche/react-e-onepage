@@ -9,7 +9,6 @@ import { useState } from 'react';
 function ShoppingList({cart, updateCart, cartHasItem, setCartHasItem}) {
 
     const [categories, setCategories] = useState([]);
-    console.log(categories);
     function SetMultiCategoryFilter(plant){
         if(categories.length > 0){
             return categories.includes(plant.category);
